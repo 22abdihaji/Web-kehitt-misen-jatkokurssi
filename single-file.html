@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yksisivuinen verkkosivusto</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+      nav ul {
+        list-style: none;
+        background: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
+      section {
+        padding: 50px;
+        min-height: 100vh;
+      }
+      #about {
+        background: lightblue;
+      }
+      #services {
+        background: lightgreen;
+      }
+      #contact {
+        background: lightcoral;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#about">Tietoa</a></li>
+        <li><a href="#services">Palvelut</a></li>
+        <li><a href="#contact">Yhteystiedot</a></li>
+      </ul>
+    </nav>
+
+    <section id="about">
+      <h1>Tietoa meistä</h1>
+      <p>Tämä on yksisivuinen verkkosivusto.</p>
+    </section>
+
+    <section id="services">
+      <h1>Palvelumme</h1>
+      <p>Tarjoamme web-kehitystä ja design-palveluita.</p>
+    </section>
+
+    <section id="contact">
+      <h1>Ota yhteyttä</h1>
+      <p>Lähetä viesti osoitteeseen info@example.com</p>
+    </section>
+
+    <script>
+      document.querySelectorAll("nav ul li a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
